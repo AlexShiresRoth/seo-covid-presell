@@ -1,30 +1,18 @@
 <script>
-	export let name;
+	import Article from "./Article.svelte";
+	import Navbar from "./Navbar.svelte";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+<style type="text/scss">
+	:root {
+		--brand-main: #091540;
+		--brand-text-dark: #3d518c;
+		--brand-text-light: #f1e9db;
+		--brand-warning: #a2242280;
 	}
 </style>
+
+<Navbar />
+<main>
+	<Article />
+</main>
