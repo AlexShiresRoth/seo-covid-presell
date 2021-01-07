@@ -10,10 +10,13 @@
         justify-content: center;
         padding: 1rem 0;
         &__inner {
-            width: 90%;
+            width: var(--content-size);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            & span {
+                font-weight: 700;
+            }
         }
     }
     .title-bar {
@@ -23,7 +26,7 @@
         justify-content: center;
         align-items: center;
         &__content {
-            width: 90%;
+            width: var(--content-size);
             display: flex;
             align-items: center;
             & h1 {

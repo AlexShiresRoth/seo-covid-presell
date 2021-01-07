@@ -9,6 +9,7 @@
 		--brand-text-dark: #3d518c;
 		--brand-text-light: #f1e9db;
 		--brand-warning: #a2242280;
+		--content-size: 70%;
 	}
 </style>
 
