@@ -12,12 +12,16 @@
 		--content-size: 75%;
 		--text-size: 1.2rem;
 		--icon-container-size: 5rem;
+		--logo-size: 10rem;
+		--alert-size: 2.5rem;
 	}
 	@media screen and (max-width: 900px) {
 		:root {
 			--content-size: 90%;
 			--text-size: 1rem;
 			--icon-container-size: 2.5rem;
+			--logo-size: 6rem;
+			--alert-size: 1.6rem;
 		}
 	}
 </style>

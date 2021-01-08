@@ -18,7 +18,7 @@
                 display: flex;
                 flex-direction: column;
                 & img {
-                    max-width: 10rem;
+                    max-width: var(--logo-size);
                     object-fit: contain;
                 }
             }
@@ -61,7 +61,7 @@
             & h2 {
                 font-weight: 300;
                 color: var(--brand-warning);
-                font-size: 2.5rem;
+                font-size: var(--alert-size);
             }
         }
     }

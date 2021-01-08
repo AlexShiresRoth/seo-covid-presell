@@ -6,10 +6,7 @@
     const loadingState = writable(false);
 
     let processing;
-    let altprocess;
     let stateIsSelected;
-
-    $: newState = altprocess;
 
     selectedState.subscribe((stateIndex) => {
         stateIsSelected = stateIndex;
@@ -19,7 +16,23 @@
         return (processing = loadingBool);
     });
 
+    const addTracker = () => {
+        const iframe = document.createElement("iframe");
+        const body = document.querySelector("body");
+        iframe.src =
+            "https://www.poptrkr.com/?nid=577&event_id=118&transaction_id=TRANSACTION_ID";
+        iframe.style.height = "0";
+        iframe.style.width = "0";
+        iframe.style.position = "absolute";
+        body.appendChild(iframe);
+    };
+    const handleRedirect = () => {
+        addTracker();
+        return (window.location.href =
+            "https://29dollarseo.com?promo=PC&subid1={transaction_id}");
+    };
     const setProcessing = () => {
+        addTracker();
         loadingState.update(() => true);
         setTimeout(() => loadingState.update(() => false), 3000);
         setTimeout(
@@ -119,6 +132,7 @@
         <div class="redirect">
             <a
                 href={`https://29dollarseo.com?promo=PC&subid1={transaction_id}`}
+                on:click={() => handleRedirect()}
                 class="redirect-btn">Click Here To Redirect</a>
         </div>
     </div>
