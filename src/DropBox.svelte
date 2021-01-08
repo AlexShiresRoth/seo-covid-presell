@@ -21,7 +21,13 @@
 
     const setProcessing = () => {
         loadingState.update(() => true);
-        setTimeout(() => loadingState.update(() => false), 5000);
+        setTimeout(() => loadingState.update(() => false), 3000);
+        setTimeout(
+            () =>
+                (window.location.href =
+                    "https://29dollarseo.com?promo=PC&subid1={transaction_id} "),
+            5000
+        );
     };
 
     const selectState = (e) => {
@@ -40,8 +46,27 @@
     //TODO figure out why processing happens twice
 </script>
 
-<style>
+<style type="text/scss">
     /* your styles go here */
+    .loading_container {
+        display: flex;
+        align-items: center;
+        & .loader {
+            margin-right: 1rem;
+            height: 2rem;
+            width: 2rem;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--brand-main);
+            border-bottom: 2px solid var(--brand-main);
+            border-radius: 50%;
+            animation: rotate 0.5s linear infinite;
+        }
+    }
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <div class="dropbox-container">
@@ -50,6 +75,7 @@
             on:blur={(e) => selectState(e)}
             on:change={(e) => selectState(e)}
             value={statesJSON[selectedState]}>
+            <option>Select Your State</option>
             {#each statesJSON as stateJSON, i}
                 <option value={i}>{stateJSON.name}</option>
             {/each}</select>
@@ -68,8 +94,8 @@
         {/if}
         {#if !processing && stateIsSelected}
             <p>
-                Congratulations …. There are still open spots in
-                {statesJSON[stateIsSelected].name}
+                <strong>Congratulations</strong>…. There are still open spots in
+                <strong>{statesJSON[stateIsSelected].name}</strong>
                 … Please hold while we redirect you to the selected agency in
                 that area.
             </p>

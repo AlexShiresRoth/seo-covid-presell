@@ -12,6 +12,7 @@
         align-items: center;
         width: 100%;
         margin-bottom: 4rem;
+        padding-bottom: 4rem;
         &__content {
             display: flex;
             flex-direction: column;
