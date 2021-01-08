@@ -18,9 +18,8 @@
             flex-direction: column;
             align-items: center;
             width: var(--content-size);
-            margin-top: 2rem;
             border: 1px solid #eee;
-
+            padding-bottom: 2rem;
             & .icon-heading {
                 width: 100%;
                 display: flex;
@@ -29,7 +28,7 @@
                 border-bottom: 1px solid #eee;
                 padding: 1rem 0;
                 &__row {
-                    width: 70%;
+                    width: var(--content-size);
                     display: flex;
                     justify-content: space-between;
                     margin: 1rem 0;
@@ -46,8 +45,8 @@
                     }
                     & .icon-container {
                         border-radius: 50%;
-                        height: 5rem;
-                        width: 5rem;
+                        height: var(--icon-container-size);
+                        width: var(--icon-container-size);
                         box-shadow: 0 1px 30px #66666625;
                         display: flex;
                         align-items: center;
@@ -59,14 +58,22 @@
                             color: #eee;
                         }
                     }
+                    & .icon-container:nth-child(2) {
+                        background: var(--brand-main);
+                    }
                 }
             }
             & .text {
                 margin-top: 1rem;
                 width: 90%;
+                & h3 {
+                    color: var(--brand-main);
+                    font-size: 1.5rem;
+                }
                 & p {
                     color: #333;
                     line-height: 1.5;
+                    font-size: var(--text-size);
                 }
             }
         }
@@ -79,7 +86,7 @@
             <div class="icon-heading__row">
                 <div class="line-through" />
                 <div class="icon-container">
-                    <Icon data={file} scale="1.5" style="color: #999" />
+                    <Icon data={file} scale="1.5" style="color: #fff" />
                 </div>
                 <div class="icon-container">
                     <Icon data={building} scale="1.5" style="color: #999" />
@@ -93,29 +100,35 @@
             </div>
         </div>
         <div class="text">
+            <h3>This is a special small business alert.</h3>
             <p>
-                Due to Covid-19 and the closure of businesses worldwide, a
-                special relief programhas been established to help American
-                businesses survivethese tougher than ever times by helping them
-                establish new marketing channels at hugely discounted rates.
-                This special relief program is intended to bring more customers
-                to local businesses suffering from the effects of Covid-19.
+                Due to Covid-19 and the closure of businesses worldwide,
+                <strong>a special relief program</strong>
+                has been established
+                <strong>to help American businesses survive</strong>
+                these tougher than ever times by helping them establish new
+                marketing channels at hugely discounted rates. This special
+                relief program is intended to
+                <strong>bring more customers to local businesses suffering from
+                    the effects of Covid-19</strong>.
             </p>
             <p>
                 The enactment of this long-awaited Small Business program is
                 finally here, and one that is sure to help boost America’s
-                struggling small businesses, some businesses may report up to 3
-                new customers coming in each day thanks to the new digital
-                marketing programs now offered in conjunction with relief for
-                small businesses.
+                struggling small businesses,
+                <strong>some businesses may report up to 3 new customers coming
+                    in each day</strong>
+                thanks to the new digital marketing programs now offered in
+                conjunction with relief for small businesses.
             </p>
             <p>
-                Businesses looking for new streams of customers may be eligible
-                for subsidized marketing services and are encouraged to apply
-                today while space is available, and this program is in force.
-                Those who need new customers for their businesses to survive
-                will find that these new programs are exactly what they have
-                been missing.
+                Businesses looking for new streams of customers
+                <strong>may be eligible for subsidized marketing services</strong>
+                and are encouraged to
+                <u>apply today while space is available</u>, and this program is
+                in force. Those who need new customers for their businesses to
+                survive will find that these new programs are exactly what they
+                have been missing.
             </p>
             <p>
                 Businesses who have taken advantage of this special promotion
@@ -123,10 +136,15 @@
                 programs availability.
             </p>
             <p>
-                The highly discounted services are only offered while space is
-                available, and it is expected to fill up very fast!
+                The highly discounted services are
+                <strong>only offered while space is available</strong>, and it
+                <u>is expected to fill up very fast!</u>
             </p>
-            <p>To apply for this program please select your state below</p>
+            <p>
+                To
+                <strong>apply for this program</strong>
+                please select your state below
+            </p>
             <DropBox />
         </div>
     </div>

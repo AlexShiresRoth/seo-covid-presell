@@ -25,7 +25,7 @@
         setTimeout(
             () =>
                 (window.location.href =
-                    "https://29dollarseo.com?promo=PC&subid1={transaction_id} "),
+                    "https://29dollarseo.com?promo=PC&subid1={transaction_id}"),
             5000
         );
     };
@@ -41,9 +41,6 @@
         //manufacture a processing effect
         return setProcessing();
     };
-
-    console.log(newState);
-    //TODO figure out why processing happens twice
 </script>
 
 <style type="text/scss">
@@ -60,6 +57,25 @@
             border-bottom: 2px solid var(--brand-main);
             border-radius: 50%;
             animation: rotate 0.5s linear infinite;
+        }
+    }
+    .redirect {
+        display: flex;
+        margin: 2rem 0;
+    }
+    .redirect-btn {
+        padding: 1rem;
+        min-width: 15rem;
+        max-width: 100%;
+        background: var(--brand-main);
+        color: #fff;
+        border-radius: 3px;
+        border: 0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 1px 50px rgba(238, 238, 238, 0.534);
+            background: lighten(#091540, 5%);
         }
     }
     @keyframes rotate {
@@ -100,5 +116,10 @@
                 that area.
             </p>
         {/if}
+        <div class="redirect">
+            <a
+                href={`https://29dollarseo.com?promo=PC&subid1={transaction_id}`}
+                class="redirect-btn">Click Here To Redirect</a>
+        </div>
     </div>
 </section>
